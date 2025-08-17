@@ -8,9 +8,9 @@
 				><span class="material-symbols-outlined"> edit </span
 				><span
 					@click="toggleComplete"
-					class="material-symbols-outlined"
+					class="material-symbols-outlined tick"
 				>
-					check
+					done
 				</span>
 			</div>
 		</div>
@@ -87,5 +87,8 @@ h3 {
 }
 .task.complete {
 	border-left: 8px solid green;
+}
+.task.complete .tick {
+	color: darkgreen;
 }
 </style>
