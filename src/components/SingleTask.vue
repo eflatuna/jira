@@ -25,4 +25,23 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.task {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+	padding: 10px 20px;
+	margin: 20px 0px;
+	background-color: white;
+	border-radius: 20px;
+	border-left: 8px solid palevioletred;
+}
+h3 {
+	cursor: pointer;
+}
+.details {
+	padding: 20px 0px;
+}
+
+.actions {
+	padding: 15px 0px;
+}
+</style>
