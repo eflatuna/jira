@@ -1,9 +1,9 @@
 <template>
 	<div class="task">
 		<div class="actions">
-			<h3>{{ task.title }}</h3>
+			<h3 @click="toggleDetail">{{ task.title }}</h3>
 		</div>
-		<div class="details">
+		<div class="details" v-if="showDetails">
 			<p>{{ task.details }}</p>
 		</div>
 	</div>
@@ -12,6 +12,16 @@
 <script>
 export default {
 	props: ["task"],
+	data() {
+		return {
+			showDetails: false,
+		};
+	},
+	methods: {
+		toggleDetail() {
+			this.showDetails = !this.showDetails;
+		},
+	},
 };
 </script>
 
