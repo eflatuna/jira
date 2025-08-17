@@ -48,5 +48,15 @@ h3 {
 
 .actions {
 	padding: 15px 0px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.material-symbols-outlined {
+	font-size: 25px;
+	cursor: pointer;
+	margin-left: 20px;
+	color: gray;
 }
 </style>
