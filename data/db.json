@@ -11,6 +11,12 @@
       "details": "Vue js ile frontend islemleri",
       "complete": false,
       "id": "2"
+    },
+    {
+      "id": 20141,
+      "title": "React",
+      "details": "Redux",
+      "complete": false
     }
   ]
 }

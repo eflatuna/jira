@@ -1,5 +1,5 @@
 <template>
-	<form>
+	<form @submit.prevent="handleSubmit()">
 		<label>Title</label>
 		<input type="text" v-model="title" required />
 		<label>Task Details</label>
@@ -14,7 +14,28 @@ export default {
 		return {
 			title: "",
 			details: "",
+			uri: "http://localhost:3000/tasks/",
 		};
+	},
+	methods: {
+		handleSubmit() {
+			let task = {
+				id: Math.floor(Math.random() * 100000),
+				title: this.title,
+				details: this.details,
+				complete: false,
+			};
+
+			fetch(this.uri, {
+				method: "POST",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(task),
+			})
+				.then(() => {
+					this.$router.push("/");
+				})
+				.catch((err) => console.log(err.message));
+		},
 	},
 };
 </script>
@@ -36,7 +57,7 @@ label {
 }
 input {
 	padding: 10px;
-	font-size: 16px;
+	font-size: 15px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	width: 100%;
@@ -46,7 +67,7 @@ input {
 }
 textarea {
 	padding: 10px;
-	font-size: 20px;
+	font-size: 15px;
 	border: 1px solid #ddd;
 	border-radius: 4px;
 	width: 100%;
