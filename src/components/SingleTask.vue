@@ -2,6 +2,11 @@
 	<div class="task">
 		<div class="actions">
 			<h3 @click="toggleDetail">{{ task.title }}</h3>
+			<div>
+				<span class="material-symbols-outlined"> delete </span
+				><span class="material-symbols-outlined"> edit </span
+				><span class="material-symbols-outlined"> check </span>
+			</div>
 		</div>
 		<div class="details" v-if="showDetails">
 			<p>{{ task.details }}</p>
