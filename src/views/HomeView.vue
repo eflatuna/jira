@@ -1,6 +1,6 @@
 <template>
 	<div v-if="tasks.length">
-		<div v-for="task in tasks" key="task.id">
+		<div v-for="task in tasks" :key="task.id">
 			<SingleTask
 				:task="task"
 				@deleteTask="handleDelete"

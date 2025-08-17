@@ -1,5 +1,5 @@
 <template>
-	<div class="task">
+	<div class="task" :class="{ complete: task.complete }">
 		<div class="actions">
 			<h3 @click="toggleDetail">{{ task.title }}</h3>
 			<div>
@@ -84,5 +84,8 @@ h3 {
 	cursor: pointer;
 	margin-left: 20px;
 	color: gray;
+}
+.task.complete {
+	border-left: 8px solid green;
 }
 </style>
