@@ -1,7 +1,7 @@
 <template>
 	<div v-if="tasks.length">
 		<div v-for="task in tasks" key="task.id">
-			<SingleTask :task="task" />
+			<SingleTask :task="task" @deleteTask="handleDelete" />
 		</div>
 	</div>
 </template>
@@ -13,6 +13,7 @@ export default {
 	components: {
 		SingleTask,
 	},
+
 	data() {
 		return {
 			tasks: [],
@@ -23,6 +24,13 @@ export default {
 			.then((res) => res.json())
 			.then((data) => (this.tasks = data))
 			.catch((err) => console.log(err.message));
+	},
+	methods: {
+		handleDelete(id) {
+			this.tasks = this.tasks.filter((task) => {
+				return task.id !== id;
+			});
+		},
 	},
 };
 </script>

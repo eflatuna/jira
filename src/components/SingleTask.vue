@@ -3,7 +3,8 @@
 		<div class="actions">
 			<h3 @click="toggleDetail">{{ task.title }}</h3>
 			<div>
-				<span class="material-symbols-outlined"> delete </span
+				<span @click="deleteTask" class="material-symbols-outlined">
+					delete </span
 				><span class="material-symbols-outlined"> edit </span
 				><span class="material-symbols-outlined"> check </span>
 			</div>
@@ -17,14 +18,21 @@
 <script>
 export default {
 	props: ["task"],
+	emits: ["deleteTask"],
 	data() {
 		return {
 			showDetails: false,
+			uri: "http://localhost:3000/tasks/" + this.task.id,
 		};
 	},
 	methods: {
 		toggleDetail() {
 			this.showDetails = !this.showDetails;
+		},
+		deleteTask() {
+			fetch(this.uri, { method: "DELETE" })
+				.then(() => this.$emit("deleteTask", this.task.id))
+				.catch((err) => console.log(err.message));
 		},
 	},
 };
