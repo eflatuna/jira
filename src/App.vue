@@ -1,5 +1,8 @@
 <template>
-	<nav><router-link to="/">Home</router-link></nav>
+	<nav class="mainNav">
+		<router-link to="/">Todo List</router-link>
+		<router-link to="/addTask">Add New Todo </router-link>
+	</nav>
 	<router-view />
 </template>
 
@@ -19,5 +22,22 @@ body {
 	max-width: 600px;
 	width: 100%;
 	margin: 0px auto;
+}
+
+.mainNav {
+	text-align: center;
+	margin: 40px 0px;
+}
+
+.mainNav a {
+	text-decoration: none;
+	color: gray;
+	font-size: 18px;
+	margin: 0px 10px;
+}
+
+a.router-link-active {
+	color: palevioletred;
+	padding-bottom: 4px;
 }
 </style>
