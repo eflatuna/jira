@@ -1,16 +1,16 @@
 {
-	"tasks": [
-		{
-			"title": "Backend Islemleri",
-			"details": "Node js ile backend islemleri",
-			"completed": true,
-			"id": "1"
-		},
-		{
-			"title": "Frontend Islemleri",
-			"details": "Vue js ile frontend islemleri",
-			"completed": false,
-			"id": "2"
-		}
-	]
+  "tasks": [
+    {
+      "title": "Backend Islemleri",
+      "details": "Node js ile backend islemleri",
+      "complete": true,
+      "id": "1"
+    },
+    {
+      "title": "Frontend Islemleri",
+      "details": "Vue js ile frontend islemleri",
+      "complete": false,
+      "id": "2"
+    }
+  ]
 }
