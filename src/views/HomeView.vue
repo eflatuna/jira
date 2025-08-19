@@ -56,7 +56,7 @@ export default {
 					return task.complete;
 				});
 			}
-			if (this.current === "contunied") {
+			if (this.current === "continued") {
 				return this.tasks.filter((task) => {
 					return !task.complete;
 				});
