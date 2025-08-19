@@ -12,10 +12,12 @@
 
 <script>
 import SingleTask from "../components/SingleTask.vue";
+import FilterTask from "../components/FilterTask.vue";
 export default {
 	name: "HomeView",
 	components: {
 		SingleTask,
+		FilterTask,
 	},
 
 	data() {
