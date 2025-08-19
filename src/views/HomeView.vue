@@ -1,6 +1,7 @@
 <template>
+	<FilterTask :current="current" @filterChange="changeFilter" />
 	<div v-if="tasks.length">
-		<div v-for="task in tasks" :key="task.id">
+		<div v-for="task in filteredTasks" :key="task.id">
 			<SingleTask
 				:task="task"
 				@deleteTask="handleDelete"
@@ -23,6 +24,7 @@ export default {
 	data() {
 		return {
 			tasks: [],
+			current: "all",
 		};
 	},
 	mounted() {
@@ -37,11 +39,29 @@ export default {
 				return task.id !== id;
 			});
 		},
+		changeFilter(filterValue) {
+			this.current = filterValue;
+		},
 		handleComplete(id) {
 			let myTask = this.tasks.find((task) => {
 				return task.id === id;
 			});
 			myTask.complete = !myTask.complete;
+		},
+	},
+	computed: {
+		filteredTasks() {
+			if (this.current === "completed") {
+				return this.tasks.filter((task) => {
+					return task.complete;
+				});
+			}
+			if (this.current === "contunied") {
+				return this.tasks.filter((task) => {
+					return !task.complete;
+				});
+			}
+			return this.tasks;
 		},
 	},
 };
