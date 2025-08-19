@@ -8,12 +8,12 @@
     },
     {
       "title": "Frontend Islemleri",
-      "details": "Vue js ile frontend islemleri",
-      "complete": false,
+      "details": "Vue js ile frontend islemler",
+      "complete": true,
       "id": "2"
     },
     {
-      "id": 20141,
+      "id": "20141",
       "title": "React",
       "details": "Redux",
       "complete": false
