@@ -18,6 +18,7 @@ const routes = [
 		path: "/task/:id",
 		name: "editTask",
 		component: EditTask,
+		props: true,
 	},
 ];
 

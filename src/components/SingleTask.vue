@@ -5,7 +5,10 @@
 			<div>
 				<span @click="deleteTask" class="material-symbols-outlined">
 					delete </span
-				><span class="material-symbols-outlined"> edit </span
+					<router-link :to="{name:"editTask",params:{id:task.id}}">
+						<span class="material-symbols-outlined"> edit </span
+					</router-link>
+				>
 				><span
 					@click="toggleComplete"
 					class="material-symbols-outlined tick"
